@@ -9,11 +9,9 @@
   "dependencies": {
     "body-parser": "^1.13.1",
     "cors": "^2.7.1",
-    "express": "^4.12.4"
+    "express": "^4.12.4",
+    "request": "^2.72.0"
   },
   "author": "",
-  "license": "ISC",
-  "Dependencies": {
-    "request": "^2.72.0"
-  }
+  "license": "ISC"
 }
