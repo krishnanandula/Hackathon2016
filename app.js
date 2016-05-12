@@ -21,16 +21,17 @@ router.route('/users/:Id').get(function(req,res) {
         var msg = null;
         var wikiBaseUrl = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=";
         var query = sentence;
-        //
-        //
-        //request(wikiBaseUrl+query, function (error, response, body) {
-        //    if (!error && response.statusCode == 200) {
-        //        msg = _.flatten(JSON.stringify(JSON.parse(response.body).query.pages))
-        //        var u = {"name" : msg};
-        //        res.json(u);
-        //    }
-        //})
-    var u = {"name" : "<b>test</b>"};
+
+
+        request(wikiBaseUrl+query, function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                msg = _.flatten(JSON.stringify(JSON.parse(response.body).query.pages))
+                var u = {"name" : msg};
+                res.json(u);
+            }
+        })
+
+    var u = {"name" : ""};
     res.json(u);
     });
 
