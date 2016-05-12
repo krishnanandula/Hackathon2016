@@ -3,6 +3,7 @@
  */
 var express = require('express');
 var cors = require('cors');
+var request = require('request');
 var app = express();
 
 app.use(cors());
@@ -29,7 +30,7 @@ router.route('/users/:Id').get(function(req,res) {
         //        res.json(u);
         //    }
         //})
-    var u = {"name" : "test"};
+    var u = {"name" : "<b>test</b>"};
     res.json(u);
     });
 
