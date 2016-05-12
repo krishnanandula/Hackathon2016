@@ -30,9 +30,6 @@ router.route('/users/:Id').get(function(req,res) {
                 res.json(u);
             }
         })
-
-    var u = {"name" : ""};
-    res.json(u);
     });
 
 app.use('/api',router);
