@@ -3,8 +3,6 @@
  */
 var express = require('express');
 var cors = require('cors');
-var _ = require('underscore');
-var request = require('request');
 var app = express();
 
 app.use(cors());
