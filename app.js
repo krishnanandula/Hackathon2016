@@ -25,7 +25,7 @@ router.route('/users/:Id').get(function(req,res) {
 
         request(wikiBaseUrl+query, function (error, response, body) {
             if (!error && response.statusCode == 200) {
-                msg = _.flatten(JSON.stringify(JSON.parse(response.body).query.pages))
+                msg = (JSON.stringify(JSON.parse(response.body).query.pages));
                 var u = {"name" : msg};
                 res.json(u);
             }
