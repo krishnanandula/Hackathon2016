@@ -33,9 +33,6 @@ router.route('/users/:Id')
                 res.json(u);
             }
         })
-
-        var u = {"name" : ""};
-        res.json(u);
     });
 
 app.use('/api',router);
