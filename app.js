@@ -17,8 +17,7 @@ var port = process.env.PORT || 3100;
 var router = express.Router();
 
 
-router.route('/users/:Id')
-.get(function(req,res) {
+router.route('/users/:Id').get(function(req,res) {
         var sentence =  req.params.Id;
         var msg = null;
         var wikiBaseUrl = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=";
@@ -32,6 +31,8 @@ router.route('/users/:Id')
                 res.json(u);
             }
         })
+    var u = {"name" : "test"};
+    res.json(u);
     });
 
 app.use('/api',router);
