@@ -7,10 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-  "body-parser": "^1.13.1",
-  "cors": "^2.7.1",
-  "express": "^4.12.4"
-},
+    "body-parser": "^1.13.1",
+    "cors": "^2.7.1",
+    "express": "^4.12.4"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "request": "^2.72.0",
+    "underscore": "^1.8.3"
+  }
 }

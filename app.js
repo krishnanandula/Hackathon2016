@@ -3,13 +3,16 @@
  */
 var express = require('express');
 var cors = require('cors');
+var _ = require('underscore');
+var request = require('request');
 var app = express();
+
 app.use(cors());
 var bodyparser = require('body-parser');
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json());
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3100;
 
 var router = express.Router();
 
@@ -18,8 +21,20 @@ router.route('/users/:Id')
 .get(function(req,res) {
         var sentence =  req.params.Id;
         var msg = null;
-        msg = "breaking test results";
-        var u = {"name" : msg};
+        var wikiBaseUrl = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=";
+        var query = sentence;
+
+
+
+        request(wikiBaseUrl+query, function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                msg = body;
+                var u = {"name" : msg};
+                res.json(u);
+            }
+        })
+
+        var u = {"name" : ""};
         res.json(u);
     });
 
